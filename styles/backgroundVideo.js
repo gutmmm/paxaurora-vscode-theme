@@ -21,8 +21,11 @@
             video.style.objectFit = 'cover';
 
             // Set video source - dynamically get the extension path
-            const extensionPath = 'vscode-file://vscode-app' + document.querySelector('link[href*="paxauroratheme"]')?.href.split('/styles/')[0] || '';
-            video.src = extensionPath + '/assets/vscode3.mp4';
+            const styleLink = document.querySelector('link[href*="paxauroratheme"]');
+            if (styleLink) {
+                const extensionPath = styleLink.href.split('/styles/')[0];
+                video.src = extensionPath + '/assets/vscode3.mp4';
+            }
 
             // Insert video as first child
             watermark.style.position = 'relative';
