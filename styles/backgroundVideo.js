@@ -20,8 +20,9 @@
             video.style.zIndex = '0';
             video.style.objectFit = 'cover';
 
-            // Set video source
-            video.src = 'vscode-file://vscode-app/Users/maks/.vscode/extensions/maks.vscode-traed-1.0.0/assets/vscode3.mp4';
+            // Set video source - dynamically get the extension path
+            const extensionPath = 'vscode-file://vscode-app' + document.querySelector('link[href*="paxauroratheme"]')?.href.split('/styles/')[0] || '';
+            video.src = extensionPath + '/assets/vscode3.mp4';
 
             // Insert video as first child
             watermark.style.position = 'relative';
