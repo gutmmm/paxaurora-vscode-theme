@@ -1,0 +1,667 @@
+:root {
+    --spacing: 0.35rem;
+    --border-radius: 0.5rem;
+    --tab-spacing: 0.2rem;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label {
+    line-height: 32px !important;
+    color: var(--vscode-tab-activeForeground, #ffffff) !important;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab .tab-label .monaco-icon-label>.label-name {
+    color: var(--vscode-tab-activeForeground, #ffffff) !important;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab {
+    border-radius: var(--border-radius);
+    background-color: var(--vscode-tab-inactiveBackground, #171b26) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    margin: 0 var(--tab-spacing) 0 var(--tab-spacing);
+}
+
+.tab-border-bottom-container,
+.tab-border-top-container {
+    background: none !important;
+}
+
+div.repl-tree.monaco-mouse-cursor-text.word-wrap {
+    overflow: hidden !important;
+}
+
+.repl:has(div.repl-tree.monaco-mouse-cursor-text.word-wrap) {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.split-view-view>.monaco-grid-branch-node>.monaco-split-view2.vertical:has(#workbench\.parts\.editor) {
+    width: calc(100% - var(--spacing)) !important;
+}
+
+.monaco-split-view2.horizontal>.monaco-scrollable-element>.split-view-container>.split-view-view:has(#workbench\.parts\.editor) {
+    margin-left: var(--spacing);
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.active {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container> {
+    border: 2px solid var(--vscode-editorGroup-border, #243443) !important;
+}
+
+.breadcrumbs-below-tabs {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    overflow: hidden;
+    padding: 5px 0 0 0;
+}
+
+.monaco-breadcrumbs {
+    font-size: 0.7rem;
+}
+
+.monaco-editor .sticky-widget {
+    box-shadow: none;
+}
+
+.monaco-editor .scroll-decoration {
+    box-shadow: none;
+}
+
+.results>.monaco-list>.monaco-scrollable-element,
+.results>.monaco-list>.monaco-scrollable-element>.monaco-list-rows {
+    border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+}
+
+.monaco-list>.monaco-scrollable-element {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.extensions-viewlet>.extensions .message-container {
+    padding: unset !important;
+}
+
+.editor-group-container,
+.monaco-workbench .part.editor>.content .editor-group-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    height: calc(100% - var(--spacing)) !important;
+    box-shadow: none;
+}
+
+.monaco-split-view2.separator-border.vertical>.monaco-scrollable-element>.split-view-container>.split-view-view:not(:first-child):before {
+    background: var(--vscode-panel-border, #252a38) !important;
+}
+
+.monaco-split-view2.separator-border>.monaco-scrollable-element>.split-view-container>.split-view-view:not(:first-child):before {
+    background: var(--vscode-panel-border, #252a38) !important;
+}
+
+.welcome-view-content {
+    background: var(--vscode-editor-background, #171b26) !important;
+}
+
+div.monaco-scrollable-element>div.split-view-container>div>div>div.pane-body {
+    background: var(--vscode-sideBar-background, #171b26) !important;
+}
+
+#workbench\.parts\.sidebar>.content {
+    width: auto !important;
+}
+
+#workbench\.parts\.editor>.content {
+    background-color: unset !important;
+    width: calc(100% - var(--spacing)) !important;
+}
+
+.monaco-workbench .part.panel.bottom .composite.title {
+    border-top-style: none !important;
+}
+
+.monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center,
+.monaco-workbench .part.titlebar .command-center-center,
+.action-item.command-center-center {
+    border-radius: 5rem !important;
+    border: none !important;
+    background: linear-gradient(90deg, #ff3366, #3579ff, #ff3366, #3579ff) !important;
+    background-size: 200% 100% !important;
+    animation: gradientShift 3s linear infinite !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Hide only the left/right navigation arrows, not the main search input */
+.monaco-workbench .part.titlebar .command-center > .monaco-action-bar > .actions-container > .action-item:first-child,
+.monaco-workbench .part.titlebar .command-center > .monaco-action-bar > .actions-container > .action-item:last-child {
+    display: none !important;
+}
+
+.titlebar-center,
+.titlebar-right {
+    transition: all 0.15s;
+}
+
+.titlebar-center:hover,
+.titlebar-right:hover {
+    opacity: 1;
+    pointer-events: all;
+}
+
+li.action-item.icon.checked,
+li.action-item.icon:hover {
+    opacity: 1;
+    border-radius: var(--border-radius);
+    background: linear-gradient(270deg, #ff3366, #3579ff) !important;
+}
+
+li.action-item.icon.checked .action-label,
+li.action-item.icon:hover .action-label {
+    color: #E0E3EE !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .badge .badge-content {
+    z-index: 99 !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item.checked .active-item-indicator:before {
+    border-left: none !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label.codicon {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label:not(.codicon) {
+    padding: unset !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label {
+    width: 44px !important;
+    height: 44px !important;
+}
+
+div.pane-body>div>div>div>div.monaco-list-rows {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    width: 97% !important;
+    padding-bottom: 0.5rem;
+    /* height: calc(100% - 1rem) !important; */
+}
+
+li.action-item.icon {
+    transition: all 0.15s;
+    opacity: 1;
+    margin-left: 0.3rem;
+    padding-left: 0.05rem;
+    margin-top: 0.2rem;
+}
+
+.monaco-pane-view .pane>.pane-header {
+    padding: 0 6px;
+}
+
+.monaco-workbench .part.sidebar>.title {
+    background: transparent;
+    padding: var(--spacing) 0 0 0;
+}
+
+#quickInput_list>div>div.monaco-list-rows {
+    width: calc(100% - 0.3rem) !important;
+}
+
+.monaco-workbench .part.sidebar {
+    margin: 0 0 0 var(--spacing);
+    border-radius: var(--border-radius);
+    border-right: unset !important;
+    outline-color: unset !important;
+    height: calc(100% - var(--spacing)) !important;
+    box-shadow: none;
+}
+
+.monaco-workbench .pane-composite-part>.header-or-footer>.composite-bar-container>.composite-bar>.monaco-action-bar .action-item.checked .active-item-indicator:before,
+.monaco-workbench .pane-composite-part>.header-or-footer>.composite-bar-container>.composite-bar>.monaco-action-bar .action-item:focus .active-item-indicator:before,
+.monaco-workbench .pane-composite-part>.title>.composite-bar-container>.composite-bar>.monaco-action-bar .action-item.checked .active-item-indicator:before,
+.monaco-workbench .pane-composite-part>.title>.composite-bar-container>.composite-bar>.monaco-action-bar .action-item:focus .active-item-indicator:before {
+    border-top-width: 1px;
+}
+
+.search-view .search-widgets-container {
+    margin: 0 calc(var(--border-radius) + 0.5rem) 0 var(--border-radius) !important;
+}
+
+div .search-view .search-widget .replace-input {
+    width: 100% !important;
+}
+
+.search-view .search-widget .search-container {
+    padding-bottom: 5px !important;
+}
+
+.search-view .monaco-findInput {
+    width: 98% !important;
+    border: 3px solid var(--vscode-checkbox-border, #6b6b6b) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.replace-input>.monaco-findInput>.controls {
+    margin: 1px 2px 0 0 !important;
+}
+
+.search-view .search-widget .replace-container {
+    width: 93.3% !important;
+}
+
+.monaco-findInput .monaco-inputbox {
+    border-radius: var(--border-radius) !important;
+}
+
+.quick-input-widget {
+    transform: translateY(-50%) !important;
+    top: 50% !important;
+    z-index: 100;
+    border: solid 1px rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    font-size: 24px !important;
+    box-shadow: 0px 8px 20px var(--vscode-widget-shadow, #0000005c) !important;
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+.quick-input-widget .monaco-list-rows {
+    font-size: 13px !important;
+}
+
+.quick-input-widget .monaco-list-rows {
+    background: transparent !important;
+}
+
+.quick-input-widget .monaco-list-row:hover {
+    background: var(--vscode-list-hoverBackground, #343b4d) !important;
+}
+
+.quick-input-filter .monaco-inputbox {
+    border-radius: 12px !important;
+    padding: 12px !important;
+    border: none !important;
+    background-color: var(--vscode-input-background, #171b26) !important;
+    font-size: 20px !important;
+    margin-bottom: 16px !important;
+}
+
+#command-blur {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--vscode-editor-background, #171b26) !important;
+    opacity: 80%;
+    top: 0 !important;
+    left: 0 !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    z-index: 99 !important;
+}
+
+/* Notification styling - match command palette gradient */
+.notification-toast,
+.notification-toast-container,
+.notifications-toasts,
+.notification-toast>.notifications-list-container,
+.notification-toast>.notifications-list-container>.monaco-list {
+    border-radius: var(--border-radius) !important;
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+.notifications-center.visible,
+.notifications-center,
+.notifications-center>.notifications-list-container,
+.notifications-center .monaco-list {
+    border-radius: var(--border-radius) !important;
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+.notification-list-item {
+    background: transparent !important;
+}
+
+.monaco-button,
+.chat-input-container,
+.suggest-input-container {
+    border-radius: var(--border-radius) !important;
+}
+
+div.monaco-workbench>div:has(iframe.webview.ready) {
+    height: calc(100% - 22.5rem) !important;
+}
+
+.monaco-inputbox input::placeholder {
+    color: var(--vscode-input-placeholderForeground, #cccccc80) !important;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container {
+    margin: var(--border-radius) var(--border-radius) 0 var(--border-radius);
+}
+
+.monaco-icon-label:after {
+    font-size: 70% !important;
+    margin: 1px 16px 0 5px !important;
+}
+
+.monaco-editor .find-widget {
+    top: 12px !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.search-view .query-details.more h4 {
+    padding: 4px 0px 4px 1px !important;
+}
+
+.monaco-workbench .part.auxiliarybar>.title {
+    background-color: unset !important;
+}
+
+.monaco-workbench .part.auxiliarybar {
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    margin-right: var(--spacing) !important;
+    height: calc(100% - var(--spacing)) !important;
+    box-shadow: none;
+}
+
+.part.statusbar {
+    background-color: var(--vscode-statusBar-background, #252a38) !important;
+}
+
+.monaco-workbench .part.panel>.content {
+    height: calc(100% - 2rem) !important;
+}
+
+.monaco-workbench .part.panel {
+    margin: 0 var(--spacing) 0 0;
+    height: calc(100% - calc(var(--spacing) + 0.1rem)) !important;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    border-right: 2px solid var(--vscode-terminal-background, #171b2600) !important;
+}
+
+.terminal-group>.monaco-split-view2>.monaco-scrollable-element>.split-view-container>.split-view-view {
+    background: var(--vscode-terminal-background, #171b26) !important;
+}
+
+.terminal.xterm,
+.xterm-scrollable-element,
+.xterm-scrollable-element>.xterm-screen,
+.xterm-scrollable-element>.xterm-screen>.xterm-decoration-container {
+    height: 100% !important;
+}
+
+.monaco-editor {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+
+.monaco-editor-background {
+    border-radius: var(--border-radius);
+}
+
+.part.panel.basepanel.bottom.pane-composite-part {
+    margin-top: 0.1rem;
+}
+
+.split-view-view.visible,
+.split-view-container {
+    background: var(--vscode-activityBar-background, #171b26) !important;
+}
+
+/* Scrollbar gradient styling */
+.monaco-scrollable-element > .scrollbar > .slider {
+    background: linear-gradient(135deg, #3579ff 0%, #B38CFF 40%, #ff3366 100%) !important;
+    border-radius: 10px !important;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider:hover {
+    background: linear-gradient(135deg, #4589ff 0%, #C39CFF 40%, #ff4476 100%) !important;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider:active {
+    background: linear-gradient(135deg, #5599ff 0%, #D3ACFF 40%, #ff5586 100%) !important;
+}
+/* Force all notification backgrounds to match command palette */
+.monaco-workbench .part.notifications-toasts,
+.monaco-workbench .notifications-toasts .notification-toast,
+.monaco-workbench .notification-toast .notifications-list-container,
+.monaco-workbench .notifications-toasts .monaco-list,
+.monaco-workbench .notifications-toasts .monaco-scrollable-element {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+/* Target the actual notification row/item background */
+.monaco-workbench .notifications-toasts .monaco-list-row,
+.monaco-workbench .notification-toast .monaco-list-row,
+.monaco-list-row.notification-list-item,
+.notification-list-item-main-row {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Notification center header */
+.notifications-center-header,
+.monaco-workbench .notifications-center .notifications-center-header,
+.notifications-center .notifications-center-header-title {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Force notification center header to match gradient */
+.monaco-workbench .notifications-center-header,
+.notifications-center > .notifications-center-header,
+.part.notifications-center > .notifications-center-header,
+.notifications-center .notifications-center-header-title,
+.notifications-center-header .monaco-action-bar {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Apply gradient to entire notification center container */
+.part.notifications-center {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Apply gradient only to notification containers, not all elements */
+.notifications-center,
+.notification-toast,
+.notifications-toasts,
+.monaco-workbench .part.notifications-center,
+.monaco-workbench .notifications-toasts .notification-toast,
+.monaco-workbench .notification-toast .notifications-list-container,
+.monaco-workbench .notifications-toasts .monaco-list {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Fix notification header text and buttons - make backgrounds transparent */
+.notifications-center-header-title,
+.notifications-center-header .codicon,
+.notifications-center-header .monaco-action-bar .action-item,
+.notifications-center-header .monaco-action-bar .action-label,
+.notification-list-item-message,
+.notification-list-item-source {
+    background: transparent !important;
+}
+
+/* Simplify: apply gradient only to outer notification containers */
+.monaco-workbench .part.notifications-center {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Make all inner notification elements transparent to show parent gradient */
+.monaco-workbench .part.notifications-center * {
+    background: transparent !important;
+}
+
+/* Re-apply gradient to notification toasts */
+.monaco-workbench .notifications-toasts .notification-toast,
+.monaco-workbench .notification-toast {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Nuclear option - force everything notification-related to use gradient or transparent */
+.monaco-workbench .part.notifications-center,
+.monaco-workbench .part.notifications-center > *,
+.monaco-workbench .notifications-center,
+.monaco-workbench .notifications-toasts {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Force header and all children to be transparent */
+.monaco-workbench .notifications-center-header,
+.monaco-workbench .notifications-center-header *,
+.monaco-workbench .notification-list-item *,
+.monaco-workbench .monaco-list-row * {
+    background: transparent !important;
+}
+
+/* Gradient for notification buttons */
+.monaco-workbench .notifications-center .monaco-button,
+.monaco-workbench .notification-toast .monaco-button,
+.monaco-button.monaco-text-button {
+    background: linear-gradient(90deg, #3579ff, #387BFF) !important;
+    border: none !important;
+}
+
+/* Override - use same gradient as notification panel for buttons */
+.monaco-workbench .notifications-center .monaco-button,
+.monaco-workbench .notification-toast .monaco-button,
+.monaco-button.monaco-text-button {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Remove hover/active/focus states from notification items */
+.monaco-workbench .notification-list-item:hover,
+.monaco-workbench .notification-list-item:focus,
+.monaco-workbench .notification-list-item.focused,
+.monaco-workbench .monaco-list-row:hover,
+.monaco-workbench .monaco-list-row:focus,
+.monaco-workbench .monaco-list-row.focused {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Remove focus borders and selection backgrounds from file explorer and lists */
+.monaco-workbench .monaco-list:focus,
+.monaco-workbench .monaco-list.focused,
+.monaco-workbench .explorer-folders-view:focus,
+.monaco-workbench .pane-body:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+.monaco-workbench .monaco-list:focus .monaco-list-row.focused,
+.monaco-workbench .monaco-list .monaco-list-row.focused {
+    outline: none !important;
+    border: none !important;
+}
+
+/* Aggressively remove all focus outlines and borders */
+.monaco-workbench .monaco-list:focus-visible,
+.monaco-workbench .monaco-list:focus-within,
+.monaco-workbench .explorer-folders-view:focus-visible,
+.monaco-workbench .pane-body:focus-visible,
+.monaco-workbench .split-view-view:focus-visible,
+.monaco-list.list_id_1:focus,
+.monaco-list.list_id_2:focus,
+.monaco-list.list_id_3:focus {
+    outline: none !important;
+    outline-offset: 0 !important;
+    outline-width: 0 !important;
+    border: none !important;
+}
+
+/* Remove the focus outline style completely */
+.monaco-workbench .monaco-list.element-focused,
+.monaco-workbench .monaco-list.focused {
+    outline-style: none !important;
+}
+
+/* Customize the empty editor welcome screen */
+.monaco-workbench .part.editor > .content .empty-editor-group-container {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Style the welcome text and buttons */
+.empty-editor-group-container .welcome-view-content {
+    background: transparent !important;
+}
+
+/* Hide the default VS Code watermark/logo */
+.empty-editor-group-watermark {
+    display: none !important;
+}
+
+/* Target all possible empty editor screen elements */
+.monaco-workbench .editor-group-watermark,
+.monaco-workbench .editor-group-container.empty,
+.monaco-workbench .empty-editor-group,
+.monaco-workbench .welcomePage,
+.monaco-workbench .welcomePageContainer {
+    background: linear-gradient(135deg, #1a2332 0%, #2a3545 50%, #1a2332 100%) !important;
+}
+
+/* Hide VS Code logo watermark */
+.editor-group-watermark > div,
+.editor-group-watermark canvas,
+.welcomePage .title {
+    display: none !important;
+}
+
+/* Force editor watermark to fill entire editor area */
+.monaco-workbench .editor-group-watermark {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.monaco-workbench .part.editor > .content .editor-group-container.empty {
+    position: relative !important;
+}
+
+/* Remove max-width from watermark to allow full-screen video */
+.monaco-workbench .part.editor > .content .editor-group-container > .editor-group-watermark {
+    max-width: none !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Force video background to full opacity */
+.monaco-workbench .editor-group-watermark video {
+    opacity: 1 !important;
+}
